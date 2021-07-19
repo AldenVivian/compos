@@ -11,7 +11,7 @@ export class AppComponent implements OnInit{
   title = 'compos';
 
   sample = [1,2,3];
-
+name:any;
   
   productForm: FormGroup;
 
@@ -49,14 +49,19 @@ export class AppComponent implements OnInit{
     this.schools.removeAt(index);
   }
   li:any = []
+
+  sampler:string="";
+  sampler2:string="";
   onSubmit(){
     console.log("hi");
     this.li = this.productForm.value
     console.log(this.li)
     console.log("array "+this.productForm.value)
    
-    console.log("array value "+this.productForm.controls[1].value)//undefined error
-    
+    //console.log("array value "+this.productForm.controls[1].value)//undefined error
+    this.sampler =JSON.stringify(this.productForm.value);
+    //this.sampler2 =JSON.stringify(this.schoolarr.value.name);
+    console.log("sampler "+this.sampler)
   }
   
 

@@ -1,35 +1,94 @@
-<h1>USER INFO(ADD)</h1>
 
-<form [formGroup]="deptForm">
+<h1 class="text-center p-7">USER INFO Template</h1>
 
-<div class="fomr-group">
-  <label for="dept">dept number: </label>
-  <input type="text" id ="dept">
 
-  <select name="schoolnam" id="schoolnam">
-    <option value="" disabled selected hidden>DEPTID</option>
-    <option value="sample1">depid1</option>
-    <option value="sample2">depid2</option>
-</select>
+<form [formGroup]="userForm" (ngSubmit) ="onSubmit()">
 
-  <label for="nam">Name </label>
-  <input type="text" id ="name">
+  
+<div class="container text-center">
+  <div class="span5">
+    <div class="p-2">
+      
+      <input type="text" class="input-medium m-1" placeholder="Department Number" formControlName ="deptname">
+      
+      <select class = "btn btn-danger p-1"name="schoolnam" id="schoolnam" formControlName ="schooloption">
+        <option value="" disabled selected hidden>DEPTID</option>
+        <option value="sample1">depid1</option>
+        <option value="sample2">depid2</option>
+    </select>
+      
+  </div>
+    </div>
+    <div class="p-2">   
+      
+      <input type="text" class="input-medium" placeholder="Name" formControlName ="name" >
+    </div>
+    <div class="p-2">   
+       
+      <input type="text" class="input-medium" placeholder="Email" formControlName ="email">
+    </div>       
+    <div class="col p-2">     
+        
+      <input type="text" class="input-medium" placeholder="Phone Number" formControlName ="phnum">
+    </div>
+    <div class="p-2">
+      
+      <input type="text" class="input-medium" placeholder="Password" formControlName ="pass">  
+    </div>
+    
+  </div>
 
-  <label for="dept">Email: </label>
-  <input type="email" id ="dept">
-
-  <label for="ph">Phone Number </label>
-  <input type="text" id ="ph">
-
-  <label for="pass">Password </label>
-  <input type="password" id ="pass">
-
-</div>
 </form>
 
- 
+<div class="container">
+  <table class="table table-bordered bg-dark text-white m-5">
+      <thead>
+        <tr>
+          <th scope="col">No.</th>
+          <th scope="col">Dept ID</th>
+          <th scope="col">Department Number</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">PhoneNumber</th>
+          <th scope="col">Password</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row p-2">3</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-{{ this.deptForm.value | json}}
+
+
+
+
+
+
+{{ this.userForm.value | json}}
 
 <p></p>
 

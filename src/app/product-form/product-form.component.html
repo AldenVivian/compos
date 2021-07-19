@@ -1,12 +1,13 @@
-<h1>DEPARTMENTS</h1>
+<div class="container text-center">
+<h1 class="m-5">DEPARTMENTS Template</h1>
 
-<form [formGroup]="deptForm">
+<form [formGroup]="deptForm" class="form-group">
 
-    <label for="dept">Department </label>
+    <label class="m-2"for="dept">Department :  </label>
 
-  <input type="text" id ="dept">
+  <input type="text" id ="dept" formControlName="departname">
 
-  <select name="schoolnam" id="schoolnam">
+  <select class ="btn m-2 bg-dark text-white"name="schoolnam" id="schoolnam">
     <option value="" disabled selected hidden>Schools</option>
       <option value="sample1">sample</option>
       <option value="sample2">sample2</option>
@@ -17,18 +18,20 @@
   <div formArrayName="progarr">
     <div *ngFor="let item of progs.controls; let pointIndex=index" [formGroupName]="pointIndex"> 
     <label>
-      Program: {{pointIndex+1}}<input formControlName="program" />
+      Program {{pointIndex+1}}: <input formControlName="program" />
     </label>
-    <button type="button" class ="btn btn-danger" (click)="deleteProgram(pointIndex)">Delete Program</button>
+    <button type="button" class ="btn btn-danger m-1" (click)="deleteProgram(pointIndex)">Delete</button>
     </div>
-    <button type="button"class ="btn btn-primary" (click)="addProgram()">Add Program</button>
+    <button type="button"class ="btn btn-primary m-1" (click)="addProgram()">Add Program</button>
   </div>
 
 </form>
 {{ this.deptForm.value | json}}
-
+{{ this.deptForm.value.departname | json}}
+</div>
 <p></p>
-<table class="table table-dark">
+<div class="container">
+<table class="table text-center table-bordered bg-dark text-white">
     <thead>
       <tr>
         <th scope="col">No.</th>
@@ -58,6 +61,7 @@
       </tr>
     </tbody>
   </table>
+</div>
 
 
 
