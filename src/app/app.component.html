@@ -1,0 +1,60 @@
+<h1>SCHOOLS</h1>
+
+<form [formGroup]="productForm" (ngSubmit) ="onSubmit()">
+
+  
+  <h2>ADD</h2>
+
+  <div formArrayName="schoolarr">
+    <div *ngFor="let item of schools.controls; let pointIndex=index" [formGroupName]="pointIndex"> 
+    <label>
+      School: {{pointIndex+1}}<input formControlName="name" />
+    </label>
+    <button type="button"class ="btn btn-danger" (click)="deleteSchool(pointIndex)">Delete School</button>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="addSchool()">Add School</button>
+  </div>
+  <button type="submit" class="btn btn-secondary">Submit</button>
+</form>
+
+{{ this.productForm.value | json}}
+
+
+<p></p>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">No.</th>
+      <th scope="col">Program</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<p>-----------------------------------------------------------</p>
+<app-product-form></app-product-form>
+
+<p>-----------------------------------------------------------</p>
+
+<app-user></app-user>
+
+

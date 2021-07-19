@@ -1,0 +1,39 @@
+<h1>USER INFO(ADD)</h1>
+
+<form [formGroup]="deptForm">
+
+<div class="fomr-group">
+  <label for="dept">dept number: </label>
+  <input type="text" id ="dept">
+
+  <select name="schoolnam" id="schoolnam">
+    <option value="" disabled selected hidden>DEPTID</option>
+    <option value="sample1">depid1</option>
+    <option value="sample2">depid2</option>
+</select>
+
+  <label for="nam">Name </label>
+  <input type="text" id ="name">
+
+  <label for="dept">Email: </label>
+  <input type="email" id ="dept">
+
+  <label for="ph">Phone Number </label>
+  <input type="text" id ="ph">
+
+  <label for="pass">Password </label>
+  <input type="password" id ="pass">
+
+</div>
+</form>
+
+ 
+
+{{ this.deptForm.value | json}}
+
+<p></p>
+
+
+
+
+
